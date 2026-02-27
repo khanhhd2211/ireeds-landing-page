@@ -4,7 +4,6 @@ import About from "@/components/about"
 import LogoCloud from "@/components/logo-cloud"
 import SelectedWorks from "@/components/selected-works"
 import Services from "@/components/services"
-import Testimonials from "@/components/testimonials"
 import ContactSection from "@/components/contact-section"
 import Stats from "@/components/stats"
 import LatestArticles from "@/components/latest-articles"
@@ -19,7 +18,6 @@ export default function Home() {
       <LogoCloud />
       <SelectedWorks />
       <Services />
-      <Testimonials />
       <ContactSection />
       <Stats />
       <LatestArticles />

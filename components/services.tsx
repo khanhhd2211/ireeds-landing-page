@@ -1,31 +1,48 @@
-import { ArrowUpRight, Brain, Sparkles, ImageIcon, Video, Settings } from "lucide-react"
+import { ArrowUpRight, Recycle, Zap, Thermometer, Waves, Heart, Sprout, Database, Settings } from "lucide-react"
 import Link from "next/link"
 
 const services = [
   {
-    icon: Brain,
-    title: "LLM & Chatbot Development",
-    description:
-      "Build intelligent conversational AI powered by large language models for customer support, automation, and engagement.",
-    href: "/services/llm-chatbots",
+    icon: Recycle,
+    title: "Sustainable economy",
+    description: "Learn More",
+    href: "/services/sustainable-economy",
   },
   {
-    icon: Sparkles,
-    title: "Custom AI Model Training",
-    description: "Train and fine-tune AI models tailored to your specific business needs and industry requirements.",
-    href: "/services/ai-training",
+    icon: Zap,
+    title: "Energy",
+    description: "Learn More",
+    href: "/services/energy",
   },
   {
-    icon: ImageIcon,
-    title: "Generative AI for Images",
-    description: "Create stunning visuals with AI-powered image generation, editing, and enhancement technologies.",
-    href: "/services/ai-images",
+    icon: Thermometer,
+    title: "Climate Change",
+    description: "Learn More",
+    href: "/services/climate-change",
   },
   {
-    icon: Video,
-    title: "AI Video Generation",
-    description: "Transform ideas into engaging videos using cutting-edge generative AI and video synthesis.",
-    href: "/services/ai-video",
+    icon: Waves,
+    title: "Coastal",
+    description: "Learn More",
+    href: "/services/coastal",
+  },
+  {
+    icon: Heart,
+    title: "Health",
+    description: "Learn More",
+    href: "/services/health",
+  },
+  {
+    icon: Sprout,
+    title: "Agriculture",
+    description: "Learn More",
+    href: "/services/agriculture",
+  },
+  {
+    icon: Database,
+    title: "Environmental Data",
+    description: "Learn More",
+    href: "/services/environmental-data",
   },
 ]
 
@@ -41,7 +58,7 @@ export default function Services() {
               <span className="text-sm font-medium text-foreground/70">What we do</span>
             </div>
 
-            <h2 className="text-3xl font-serif text-foreground mb-6 md:text-5xl">Our Services</h2>
+            <h2 className="text-3xl font-serif text-foreground mb-6 md:text-5xl">Our Research</h2>
 
             <p className="text-foreground/70 max-w-lg">
               We offer cutting-edge AI services powered by the latest in machine learning and generative technology.
@@ -53,7 +70,7 @@ export default function Services() {
               href="/services"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
             >
-              View All Services
+              View All Researches
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

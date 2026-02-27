@@ -7,24 +7,38 @@ import { useEffect, useRef, useState } from "react"
 
 const works = [
   {
-    title: "VisionAI - Generative Image Platform",
+    title: "AI Marketplace",
     description:
-      "Advanced AI-powered platform for creating, editing, and enhancing images using state-of-the-art diffusion models and neural networks.",
-    image: "/images/vision-ai.png",
+      "<strong>Project Title</strong>: Aus4Innovation Program – AI Marketplace Project: A Business Model and Analysis<br/> <strong>Duration</strong>: 2022 – 2023",
+    image: "/images/pexels-sanketgraphy-16461434.jpg",
     href: "/works/visionai",
   },
   {
-    title: "ChatGenius - Enterprise LLM Solution",
+    title: "GEMMES Vietnam AFD",
     description:
-      "Custom large language model implementation for enterprise customer support, featuring multi-language support, context awareness, and real-time learning capabilities.",
-    image: "/images/chat.png",
+      "<strong>Project Tittle</strong>: Gemmes Vietnam: Analysis of Socio-economic impact of climate change in Vietnam and adaption strategies <br/> <strong>Duration</strong>: 2019 – 2023",
+    image: "/images/flood.jpg",
     href: "/works/chatgenius",
   },
   {
-    title: "MotionAI - Video Generation Suite",
+    title: "VietSCO CNES",
     description:
-      "Revolutionary AI video synthesis platform that transforms text and images into professional-quality videos using generative AI technology.",
-    image: "/images/motion-ai.png",
+      "<strong>Project title</strong>: The socio-economics impact of climate change and disasters on agriculture outcomes in Vietnam <br/> <strong>Duration</strong>: 2020 – 2022",
+    image: "/images/agri.jpg",
+    href: "/works/motionai",
+  },
+  {
+    title: "VietErosion-Eco",
+    description:
+      "<strong>Project Tittle</strong>: Impacts of Coastal Erosion in Vietnam: Theoretical Models and Empirical Approaches (VIET-EROSION) <br/> <strong>Duration</strong>: 2017 – 2019",
+    image: "/images/coastal.jpg",
+    href: "/works/motionai",
+  },
+  {
+    title: "VietFlood",
+    description:
+      "<strong>Project Tittle</strong>: VietFlood: Assessment of climate change impacts on Nghe An province: mitigation and adaptation, 2011- 2013.<br/> <strong>Duration</strong>: 2014 – 2015",
+    image: "/images/vietflood.jpg",
     href: "/works/motionai",
   },
 ]
@@ -86,7 +100,7 @@ export default function SelectedWorks() {
                     </h3>
                     <ArrowUpRight className="h-6 w-6 text-foreground/50 group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </div>
-                  <p className="mt-4 text-foreground/70 text-sm">{work.description}</p>
+                  <p className="mt-4 text-foreground/70 text-sm" dangerouslySetInnerHTML={{ __html: work.description }} />
                 </div>
 
                 <div

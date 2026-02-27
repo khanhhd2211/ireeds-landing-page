@@ -30,14 +30,14 @@ export default function Hero() {
           {/* Left Content - Title and Button */}
           <div className="lg:max-w-3xl pt-0">
             <h1 className="leading-tight text-balance text-left font-sans font-semibold leading-7 tracking-tight text-accent text-5xl">
-              Powering Innovation with AI & Generative Technology
+              Institute of Research in Economics, Environment and Data Science
             </h1>
 
             <Link
               href="#works"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
             >
-              See Our Works
+              Find Out More
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -46,29 +46,29 @@ export default function Hero() {
           <div className="flex items-center gap-3">
             <div className="flex -space-x-3">
               <Image
-                src="/images/imgi_114_user94.webp"
+                src="/images/man1.png"
                 alt="Team member"
-                width={40}
+                width={70}
                 height={40}
                 className="rounded-full border-2 border-background"
               />
               <Image
-                src="/images/imgi_110_user90.webp"
+                src="/images/man.png"
                 alt="Team member"
-                width={40}
+                width={70}
                 height={40}
                 className="rounded-full border-2 border-background"
               />
               <Image
-                src="/images/imgi_111_user91.webp"
+                src="/images/user.png"
                 alt="Team member"
-                width={40}
+                width={70}
                 height={40}
                 className="rounded-full border-2 border-background"
               />
             </div>
             <p className="text-sm text-foreground/70 max-w-[180px]">
-              AI specialists delivering cutting-edge solutions in LLM, image, and video generation.
+              Promoting the adoption of robust scientific evidence in policy-making and bridging the technological accessibility for the Vietnamese society
             </p>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function Hero() {
           }}
         >
           <Image
-            src="/images/97ab9037-5842-4584-bc95-9fc90baece99.png"
+            src="/images/view-2843338.jpg"
             alt="Modern sunglasses"
             width={1920}
             height={600}
@@ -91,14 +91,15 @@ export default function Hero() {
           />
 
           {/* Video Play Button */}
-          <div className="absolute bottom-6 right-6 bg-foreground text-background rounded-xl px-4 py-3 flex items-center gap-2">
+          {/*<div className="absolute bottom-6 right-6 bg-foreground text-background rounded-xl px-4 py-3 flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-background/20 flex items-center justify-center">
               <div className="w-0 h-0 border-t-4 border-b-4 border-l-6 border-transparent border-l-background ml-1" />
             </div>
             <span className="text-sm font-medium">Trailer.mp4</span>
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>
   )
 }
+

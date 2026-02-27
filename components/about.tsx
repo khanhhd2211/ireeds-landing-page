@@ -1,4 +1,4 @@
-import { ArrowUpRight, Cpu, Info } from "lucide-react"
+import { ArrowUpRight, Cpu,Eye, Info } from "lucide-react"
 import Link from "next/link"
 
 export default function About() {
@@ -14,12 +14,11 @@ export default function About() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight text-balance">
-              We harness the power of AI, LLMs, and generative technology to transform businesses.
+              IREEDS
             </h2>
 
             <p className="mt-6 text-foreground/70">
-              Whether you need intelligent chatbots, automated content generation, or custom AI models, we deliver
-              state-of-the-art solutions powered by the latest in artificial intelligence.
+              Institute of Research in Economics, Environment, and Data Science is a multi-disciplinary research institute founded by leading Vietnamese scientists at major universities and organizations around the world.
             </p>
 
             <Link
@@ -34,14 +33,13 @@ export default function About() {
           {/* Right Content - Technology Card */}
           <div className="bg-card rounded-3xl p-8 border border-border">
             <div className="w-12 h-12 rounded-2xl bg-accent flex items-center justify-center mb-6">
-              <Cpu className="h-6 w-6 text-accent-foreground" />
+              <Eye className="h-6 w-6 text-accent-foreground" />
             </div>
 
-            <h3 className="text-xl font-semibold text-foreground mb-4">AI-Powered Solutions</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-4">Visions</h3>
 
             <p className="text-foreground/70">
-              At Genai, we leverage advanced AI technologies including large language models, generative image and video
-              AI to create intelligent, scalable solutions that revolutionize how businesses operate.
+               IREEDS has a vision to create an ecosystem of experts working together to promote the sustainable development of Vietnam through research, training and practices.
             </p>
           </div>
         </div>
