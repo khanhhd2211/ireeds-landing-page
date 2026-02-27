@@ -80,7 +80,7 @@ export default function SelectedWorks() {
           <span className="text-sm font-medium text-foreground/70">Our projects</span>
         </div>
 
-        <h2 className="font-serif text-foreground mb-12 text-5xl">Selected Works</h2>
+        <h2 className="font-serif text-foreground mb-12 text-5xl">Projects</h2>
 
         {/* Works List */}
         <div className="space-y-8">

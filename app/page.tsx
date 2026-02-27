@@ -8,19 +8,37 @@ import ContactSection from "@/components/contact-section"
 import Stats from "@/components/stats"
 import LatestArticles from "@/components/latest-articles"
 import Footer from "@/components/footer"
+import TableOfContents from "@/components/table-of-contents"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      <Hero />
-      <About />
-      <LogoCloud />
-      <SelectedWorks />
-      <Services />
-      <ContactSection />
-      <Stats />
-      <LatestArticles />
+      <TableOfContents />
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="partners">
+        <LogoCloud />
+      </div>
+      <div id="works">
+        <SelectedWorks />
+      </div>
+      <div id="services">
+        <Services />
+      </div>
+      <div id="contact">
+        <ContactSection />
+      </div>
+      <div id="stats">
+        <Stats />
+      </div>
+      <div id="articles">
+        <LatestArticles />
+      </div>
       <Footer />
     </main>
   )

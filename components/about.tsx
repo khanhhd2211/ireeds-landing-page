@@ -22,7 +22,7 @@ export default function About() {
             </p>
 
             <Link
-              href="/about"
+              href="/about/vision"
               className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors group"
             >
               About Us

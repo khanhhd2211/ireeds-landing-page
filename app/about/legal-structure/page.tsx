@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Image from "next/image"
 
 export default function LegalStructurePage() {
   return (
@@ -9,7 +10,15 @@ export default function LegalStructurePage() {
       <section className="pt-32 pb-20 px-6">
         <div className="mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-8">Legal Structure</h1>
-          
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/structure.png"
+              alt="Legal Structure"
+              width={1800}
+              height={900}
+              className="object-cover rounded-lg max-w-full h-auto"
+            />
+          </div>
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-serif text-foreground mb-6">Legal Status</h2>
             

@@ -60,7 +60,7 @@ export default function Hero() {
                 className="rounded-full border-2 border-background"
               />
               <Image
-                src="/images/user.png"
+                src="/images/boy.png"
                 alt="Team member"
                 width={70}
                 height={40}

@@ -4,25 +4,39 @@ import { BookOpen } from "lucide-react"
 
 const articles = [
   {
-    category: "LLM",
-    date: "Feb 5, 2025",
-    title: "Understanding large language models: a guide to implementing GPT-powered solutions",
-    image: "/images/542b88fc-cb0e-4cb0-8022-6c02e3a5d7b5.png",
-    href: "/blog/llm-implementation",
+    category: "Workshop",
+    date: "16th and 17th June 2022",
+    title: "VietSCO CNES: User Conference Phase 1\nVietSCO User Conference: Presentation of Phase 1 Results",
+    image: "/images/conference.jpg",
+    href: "#",
   },
   {
-    category: "Generative AI",
-    date: "Feb 5, 2025",
-    title: "The future of creative content: how AI image generation is transforming design",
-    image: "/images/af346a86-aa15-4aa1-bb37-9fb3c2200752.png",
-    href: "/blog/generative-ai-design",
+    category: "Workshop",
+    date: "5th and 12th January",
+    title: "GEMMES Vietnam 2022\nWebinar 1: The Mekong Emergency",
+    image: "/images/mekong.jpg",
+    href: "#",
   },
   {
-    category: "Video AI",
-    date: "Feb 5, 2025",
-    title: "Text to video revolution: building scalable AI video generation pipelines",
-    image: "/images/71dcbc2f-6fc0-46fc-90fd-f90f4a94a619.png",
-    href: "/blog/ai-video-generation",
+    category: "Workshop",
+    date: "9th, 16th, 23rd March and 6th April 2022",
+    title: "GEMMES Vietnam 2022\nWebinar 2: Updated national impacts and adaption",
+    image: "/images/national.jpg",
+    href: "#",
+  },
+  {
+    category: "Workshop",
+    date: "11st, 18th, 25th May and 1st June 2022",
+    title: "GEMMES Vietnam 2022\nWebinar 3: Macroeconomics of climate impacts and adaption finance",
+    image: "/images/macro.jpg",
+    href: "#",
+  },
+  {
+    category: "Workshop",
+    date: "7th January 2021",
+    title: "GEMMES Vietnam 2022\nWebinar 4: Adaption Strategy",
+    image: "/images/strat.jpg",
+    href: "#",
   },
 ]
 
@@ -33,10 +47,10 @@ export default function LatestArticles() {
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-4">
           <BookOpen className="w-5 h-5 text-accent" strokeWidth={2} />
-          <span className="text-sm font-medium text-foreground/70">Our blogs</span>
+          <span className="text-sm font-medium text-foreground/70">Events</span>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-12">Latest Articles</h2>
+        <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-12">Recent Events</h2>
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-3 gap-6">
@@ -57,7 +71,7 @@ export default function LatestArticles() {
                 </span>
                 <span className="text-xs text-foreground/50">{article.date}</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors capitalize">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors whitespace-pre-line">
                 {article.title}
               </h3>
             </Link>

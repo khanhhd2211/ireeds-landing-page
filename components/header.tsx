@@ -9,12 +9,14 @@ import Image from "next/image"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  // start with header styled as if scrolled so it appears in final position on load
+  const [scrolled, setScrolled] = useState(true)
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
+  const [worksDropdownOpen, setWorksDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY >= 0)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -33,9 +35,15 @@ export default function Header() {
       ]
     },
     { name: "TEAM", href: "/team" },
-    { name: "WORKS", href: "#works" },
-    { name: "SERVICES", href: "#services" },
-    { name: "BLOG", href: "#blog" },
+    { name: "COURSE", href: "/course" },
+    { 
+      name: "WORKS", 
+      href: "#works",
+      dropdown: [
+        { name: "Research Topic", href: "/works/research-topic" },
+        { name: "Project", href: "/works/project" },
+      ]
+    },
   ]
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -84,8 +92,14 @@ export default function Header() {
                 <div 
                   key={item.name}
                   className="relative"
-                  onMouseEnter={() => setAboutDropdownOpen(true)}
-                  onMouseLeave={() => setAboutDropdownOpen(false)}
+                  onMouseEnter={() => {
+                    if (item.name === 'ABOUT') setAboutDropdownOpen(true)
+                    if (item.name === 'WORKS') setWorksDropdownOpen(true)
+                  }}
+                  onMouseLeave={() => {
+                    if (item.name === 'ABOUT') setAboutDropdownOpen(false)
+                    if (item.name === 'WORKS') setWorksDropdownOpen(false)
+                  }}
                 >
                   <button
                     className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-accent transition-colors cursor-pointer py-2"
@@ -94,7 +108,7 @@ export default function Header() {
                     <ChevronDown className="h-3 w-3" />
                   </button>
                   
-                  {aboutDropdownOpen && (
+                  {(item.name === 'ABOUT' ? aboutDropdownOpen : worksDropdownOpen) && (
                     <div className="absolute top-full left-0 pt-2 z-50">
                       <div className="w-48 bg-background border border-border rounded-lg shadow-lg py-2">
                         {item.dropdown.map((subItem) => (

@@ -61,9 +61,9 @@ export default function Services() {
             <h2 className="text-3xl font-serif text-foreground mb-6 md:text-5xl">Our Research</h2>
 
             <p className="text-foreground/70 max-w-lg">
-              We offer cutting-edge AI services powered by the latest in machine learning and generative technology.
-              From intelligent language models to video synthesis, our solutions are designed to give your business a
-              competitive edge.
+              Our research areas span the broad spectrum of economic sectors; Environment; and Technology by applying powerful technology tools such as R, Stata, Matlab, GIS with reference to specific conditions of Vietnam.
+              <br/>
+              On a larger scale, IREEDS organizes, facilitates and sponsors international workshops, conferences, and expert consultations on various topics. We also collaborate and co-ordinate funding on scientific projects which can bring major positive impacts on the society.
             </p>
 
             <Link
