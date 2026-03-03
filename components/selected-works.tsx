@@ -5,6 +5,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 const works = [
   {
     title: "AI Marketplace",
@@ -115,6 +118,9 @@ export default function SelectedWorks() {
                     width={800}
                     height={500}
                     className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -9,12 +9,12 @@ export default function Footer() {
           {/* Brand & Newsletter */}
           <div className="lg:col-span-1">
             <Link href="/" className="text-2xl font-bold text-foreground">
-              Genai
+              IREEDS
             </Link>
             <p className="mt-4 text-sm text-foreground/60 mb-6">
-              Stay updated with the latest AI innovations, industry insights, and exclusive offers.
+              Institute of research in economics, environment and data science
             </p>
-            <form className="flex">
+            {/* <form className="flex">
               <input
                 type="email"
                 placeholder="Email address"
@@ -26,11 +26,11 @@ export default function Footer() {
               >
                 <ArrowUpRight className="h-4 w-4" />
               </button>
-            </form>
+            </form> */}
           </div>
 
           {/* Pages */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">PAGES</h4>
             <nav className="flex flex-col gap-3">
               {["About us", "Works", "Services", "Blogs", "FAQ"].map((item) => (
@@ -43,10 +43,10 @@ export default function Footer() {
                 </Link>
               ))}
             </nav>
-          </div>
+          </div> */}
 
           {/* Resource */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">RESOURCE</h4>
             <nav className="flex flex-col gap-3">
               {["Reviews", "Pricing", "Contact us", "Licensing", "Style Guide"].map((item) => (
@@ -59,31 +59,32 @@ export default function Footer() {
                 </Link>
               ))}
             </nav>
-          </div>
+          </div> */}
+          <div className="lg:col-span-2"></div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">OUR ADDRESS</h4>
+          <div className="lg:col-span-1">
+            {/* <h4 className="text-sm font-semibold text-foreground mb-4">OUR ADDRESS</h4>
             <div className="flex items-start gap-3 mb-6">
               <MapPin className="h-4 w-4 text-foreground/60 mt-0.5" />
               <p className="text-sm text-foreground/60">1847 Innovation Drive, Suite 300, San Francisco, CA 94103</p>
-            </div>
+            </div> */}
 
             <h4 className="text-sm font-semibold text-foreground mb-4">CONTACT US</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-foreground/60" />
                 <a href="tel:+14159876543" className="text-sm text-foreground/60 hover:text-accent transition-colors">
-                  +(415) 987-6543
+                  +(84) 379821443
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-foreground/60" />
                 <a
-                  href="mailto:info@example.com"
+                  href="mailto:contact@ireeds.org"
                   className="text-sm text-foreground/60 hover:text-accent transition-colors"
                 >
-                  info@example.com
+                  contact@ireeds.org
                 </a>
               </div>
             </div>
@@ -91,9 +92,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-foreground/50">©2025 Genai. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+        {/* <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4"> */}
+          {/* <p className="text-sm text-foreground/50">©2025 Genai. All rights reserved.</p> */}
+          {/* <div className="flex items-center gap-6">
             <Link href="/terms" className="text-sm text-foreground/50 hover:text-accent transition-colors">
               Terms & Conditions
             </Link>
@@ -104,7 +105,7 @@ export default function Footer() {
               Cookie Policy
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

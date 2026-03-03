@@ -5,6 +5,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 export default function Hero() {
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -51,6 +54,8 @@ export default function Hero() {
                 width={70}
                 height={40}
                 className="rounded-full border-2 border-background"
+                placeholder="blur"
+                blurDataURL={blurDataURL}
               />
               <Image
                 src="/images/man.png"
@@ -58,6 +63,8 @@ export default function Hero() {
                 width={70}
                 height={40}
                 className="rounded-full border-2 border-background"
+                placeholder="blur"
+                blurDataURL={blurDataURL}
               />
               <Image
                 src="/images/boy.png"
@@ -65,6 +72,8 @@ export default function Hero() {
                 width={70}
                 height={40}
                 className="rounded-full border-2 border-background"
+                placeholder="blur"
+                blurDataURL={blurDataURL}
               />
             </div>
             <p className="text-sm text-foreground/70 max-w-[180px]">
@@ -88,6 +97,9 @@ export default function Hero() {
             width={1920}
             height={600}
             className="w-full h-auto object-cover"
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            priority
           />
 
           {/* Video Play Button */}

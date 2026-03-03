@@ -6,6 +6,9 @@ import { useState } from "react"
 import { ArrowUpRight, Send } from "lucide-react"
 import Image from "next/image"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 export default function ContactSection() {
   return (
     <section id="team" className="py-20 px-6">
@@ -40,6 +43,9 @@ export default function ContactSection() {
               width={800}
               height={500}
               className="w-full h-64 md:h-80 object-cover transition-transform duration-500"
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+              loading="lazy"
             />
           </div>
         </div>

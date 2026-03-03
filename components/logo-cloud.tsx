@@ -2,6 +2,9 @@
 
 import Image from "next/image"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 export default function LogoCloud() {
   const logos = [
     { name: "AFD", image: "/images/afd.png" },
@@ -14,7 +17,7 @@ export default function LogoCloud() {
   ]
 
   return (
-    <section className="py-12 border-y border-border bg-accent border-none overflow-hidden">
+    <section className="py-12 border-y border-border bg-background border-none overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6">
         <style jsx>{`
           @keyframes scroll {
@@ -43,6 +46,9 @@ export default function LogoCloud() {
                 width={120}
                 height={60}
                 className="h-12 md:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                placeholder="blur"
+                blurDataURL={blurDataURL}
+                loading="lazy"
               />
             </div>
           ))}
@@ -55,6 +61,9 @@ export default function LogoCloud() {
                 width={120}
                 height={60}
                 className="h-12 md:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                placeholder="blur"
+                blurDataURL={blurDataURL}
+                loading="lazy"
               />
             </div>
           ))}

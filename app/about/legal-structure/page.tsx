@@ -2,6 +2,9 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Image from "next/image"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 export default function LegalStructurePage() {
   return (
     <main className="min-h-screen bg-background">
@@ -17,6 +20,9 @@ export default function LegalStructurePage() {
               width={1800}
               height={900}
               className="object-cover rounded-lg max-w-full h-auto"
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+              loading="lazy"
             />
           </div>
           <div className="prose prose-lg max-w-none">

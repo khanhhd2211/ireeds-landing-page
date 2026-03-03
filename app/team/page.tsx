@@ -3,6 +3,9 @@ import Footer from "@/components/footer"
 import Image from "next/image"
 import { Pool } from 'pg'
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 // Database connection pool
 const pool = new Pool({
   host: 'localhost',
@@ -26,6 +29,44 @@ async function getTeamMembers() {
 
 export default async function TeamPage() {
   const teamMembers = await getTeamMembers()
+  
+  // Helper function to check if member belongs to a department
+  const belongsToDepartment = (member: any, dept: string) => {
+    return member.department && member.department.includes(dept)
+  }
+  
+  // Filter members by department
+  const boardMembers = teamMembers.filter(m => belongsToDepartment(m, 'Board of Directors'))
+  const scientificMembers = teamMembers.filter(m => belongsToDepartment(m, 'Scientific Network'))
+  const adminMembers = teamMembers.filter(m => belongsToDepartment(m, 'Administration Office'))
+
+  // Team member card component
+  const TeamMemberCard = ({ member }: { member: any }) => (
+    <div className="flex flex-col items-center text-center">
+      <div className="w-48 h-48 rounded-full overflow-hidden bg-gray-200 mb-6">
+        {member.image_url ? (
+          <Image
+            src={`/${member.image_url}`}
+            alt={member.name}
+            width={192}
+            height={192}
+            className="w-full h-full object-cover"
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200"></div>
+        )}
+      </div>
+      <h3 className="text-xl font-semibold text-orange-500 mb-2">
+        {[member.name, member.title, member.degree].filter(Boolean).join(', ')}
+      </h3>
+      <p className="text-foreground/80 text-sm leading-relaxed">
+        {member.description}
+      </p>
+    </div>
+  )
 
   return (
     <main className="min-h-screen bg-background">
@@ -43,33 +84,30 @@ export default async function TeamPage() {
           </div>
           <br/>
           <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-8 text-center">Our Team</h1>
-          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Board of Directors</h2>
           
-          {/* Team Grid */}
+          {/* Board of Directors */}
+          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Board of Directors</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="flex flex-col items-center text-center">
-                <div className="w-48 h-48 rounded-full overflow-hidden bg-gray-200 mb-6">
-                  {member.image_url ? (
-                    <Image
-                      src={`/${member.image_url}`}
-                      alt={member.name}
-                      width={192}
-                      height={192}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gray-200"></div>
-                  )}
-                </div>
-                <h3 className="text-xl font-semibold text-orange-500 mb-2">{member.title}</h3>
-                <p className="text-foreground/80 text-sm leading-relaxed">
-                  {member.description}
-                </p>
-              </div>
+            {boardMembers.map((member) => (
+              <TeamMemberCard key={`board-${member.id}`} member={member} />
             ))}
           </div>
 
+          {/* Scientific Network */}
+          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Scientific Network</h2>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {scientificMembers.map((member) => (
+              <TeamMemberCard key={`scientific-${member.id}`} member={member} />
+            ))}
+          </div>
+
+          {/* Administration Office */}
+          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Administration Office</h2>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {adminMembers.map((member) => (
+              <TeamMemberCard key={`admin-${member.id}`} member={member} />
+            ))}
+          </div>
 
         </div>
       </section>

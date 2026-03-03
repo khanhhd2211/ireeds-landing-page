@@ -7,6 +7,9 @@ import { useState, useEffect } from "react"
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   // start with header styled as if scrolled so it appears in final position on load
@@ -82,6 +85,8 @@ export default function Header() {
               height={scrolled ? 40 : 50}
               className="h-auto"
               priority
+              placeholder="blur"
+              blurDataURL={blurDataURL}
             />
           </Link>
 

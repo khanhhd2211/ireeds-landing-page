@@ -2,6 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { BookOpen } from "lucide-react"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 const articles = [
   {
     category: "Workshop",
@@ -63,6 +66,9 @@ export default function LatestArticles() {
                   width={400}
                   height={250}
                   className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  loading="lazy"
                 />
               </div>
               <div className="flex items-center gap-4 mb-3">

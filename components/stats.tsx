@@ -1,6 +1,3 @@
-import { ArrowUpRight, BarChart3 } from "lucide-react"
-import Link from "next/link"
-
 const stats = [
   {
     label: "Developed with High-Performance Optimization",
@@ -28,28 +25,6 @@ export default function Stats() {
   return (
     <section className="py-20 px-6 text-background bg-accent">
       <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="w-5 h-5 text-background" strokeWidth={2} />
-              <span className="text-sm font-medium text-background/70">Statistical Insights</span>
-            </div>
-
-            <p className="text-background/70 max-w-md">
-              At Genai, we leverage data-driven insights and AI to create impactful solutions for our clients.
-            </p>
-
-            <Link
-              href="/pricing"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-accent hover:bg-white/90 transition-all"
-            >
-              Explore More
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-
         {/* Stats Grid */}
         <div className="grid md:grid-cols-3 gap-0">
           {/* First Stat */}
