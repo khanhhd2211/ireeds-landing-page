@@ -56,6 +56,7 @@ export default function Hero() {
                 className="rounded-full border-2 border-background"
                 placeholder="blur"
                 blurDataURL={blurDataURL}
+                loading="lazy"
               />
               <Image
                 src="/images/man.png"
@@ -65,6 +66,7 @@ export default function Hero() {
                 className="rounded-full border-2 border-background"
                 placeholder="blur"
                 blurDataURL={blurDataURL}
+                loading="lazy"
               />
               <Image
                 src="/images/boy.png"
@@ -74,6 +76,7 @@ export default function Hero() {
                 className="rounded-full border-2 border-background"
                 placeholder="blur"
                 blurDataURL={blurDataURL}
+                loading="lazy"
               />
             </div>
             <p className="text-sm text-foreground/70 max-w-[180px]">

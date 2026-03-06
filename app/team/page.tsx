@@ -42,7 +42,7 @@ export default async function TeamPage() {
 
   // Team member card component
   const TeamMemberCard = ({ member }: { member: any }) => (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex flex-col items-center text-center bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
       <div className="w-48 h-48 rounded-full overflow-hidden bg-gray-200 mb-6">
         {member.image_url ? (
           <Image
@@ -56,7 +56,9 @@ export default async function TeamPage() {
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full bg-gray-200"></div>
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <span className="text-gray-400 text-sm">No image</span>
+          </div>
         )}
       </div>
       <h3 className="text-xl font-semibold text-orange-500 mb-2">

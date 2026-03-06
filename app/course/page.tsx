@@ -3,6 +3,9 @@ import Footer from "@/components/footer"
 import { BookOpen } from "lucide-react"
 import Image from "next/image"
 
+// Blur placeholder for lazy loading
+const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+
 export default function CoursePage() {
   return (
     <main className="min-h-screen bg-background">
@@ -41,6 +44,9 @@ export default function CoursePage() {
                     alt="Graduation ceremony"
                     fill
                     className="object-cover"
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    loading="lazy"
                   />
                 </div>
                 
