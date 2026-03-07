@@ -13,16 +13,17 @@ const blurDataURL =
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // start with header styled as if scrolled so it appears in final position on load
-  const [scrolled, setScrolled] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [worksDropdownOpen, setWorksDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY >= 0);
+      setScrolled(window.scrollY > 10);
     };
 
+    // Check initial scroll position
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -68,12 +69,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 mx-2">
       <div
         className={`mx-auto max-w-7xl transition-all duration-300 ${
           scrolled
-            ? "mt-4 mx-4 px-6 py-2 shadow-lg border border-accent/30 bg-background/40 backdrop-blur-lg rounded-lg"
-            : "px-6 py-4 bg-background/30 backdrop-blur-lg mx-4 shadow-lg border border-accent/20"
+            ? "mt-4 px-6 py-2 shadow-lg border border-accent/30 bg-background/70 backdrop-blur-lg rounded-lg"
+            : "px-6 py-4 bg-background/30 backdrop-blur-lg mx-4 border border-white"
         }`}
       >
         <div className="flex items-center justify-between">

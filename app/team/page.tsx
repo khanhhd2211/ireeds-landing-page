@@ -1,53 +1,32 @@
 import Footer from "@/components/footer";
 import Image from "next/image";
-import { Pool } from "pg";
+import { getTeamMembers, type TeamMember } from "@/lib/queries";
 
 // Blur placeholder for lazy loading
 const blurDataURL =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
 
-// Database connection pool
-const pool = new Pool({
-  host: "localhost",
-  port: 5433,
-  database: "demo",
-  user: "demo_user",
-  password: "secret",
-});
-
-async function getTeamMembers() {
-  try {
-    const client = await pool.connect();
-    const result = await client.query("SELECT * FROM team_members ORDER BY id");
-    client.release();
-    return result.rows;
-  } catch (error) {
-    console.error("Database connection error:", error);
-    return [];
-  }
-}
-
 export default async function TeamPage() {
   const teamMembers = await getTeamMembers();
 
   // Helper function to check if member belongs to a department
-  const belongsToDepartment = (member: any, dept: string) => {
+  const belongsToDepartment = (member: TeamMember, dept: string) => {
     return member.department && member.department.includes(dept);
   };
 
   // Filter members by department
-  const boardMembers = teamMembers.filter((m: any) =>
+  const boardMembers = teamMembers.filter((m) =>
     belongsToDepartment(m, "Board of Directors"),
   );
-  const scientificMembers = teamMembers.filter((m: any) =>
+  const scientificMembers = teamMembers.filter((m) =>
     belongsToDepartment(m, "Scientific Network"),
   );
-  const adminMembers = teamMembers.filter((m: any) =>
+  const adminMembers = teamMembers.filter((m) =>
     belongsToDepartment(m, "Administration Office"),
   );
 
   // Team member card component
-  const TeamMemberCard = ({ member }: { member: any }) => (
+  const TeamMemberCard = ({ member }: { member: TeamMember }) => (
     <div className="flex flex-col items-center text-center bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
       <div className="w-48 h-48 rounded-full overflow-hidden bg-gray-200 mb-6">
         {member.image_url ? (

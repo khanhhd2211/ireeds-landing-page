@@ -1,49 +1,14 @@
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
-// @ts-ignore - Install @types/pg if needed: pnpm add -D @types/pg
-import { Pool } from "pg";
+import { getResearchPapers, type ResearchPaper } from "@/lib/queries";
 
 // Blur placeholder for lazy loading
 const blurDataURL =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
 
-// Research Paper interface
-interface ResearchPaper {
-  id: number;
-  fields: string;
-  title: string;
-  author: string;
-  description: string;
-  link: string;
-  image: string | null;
-}
-
-// Database connection pool
-const pool = new Pool({
-  host: "localhost",
-  port: 5433,
-  database: "demo",
-  user: "demo_user",
-  password: "secret",
-});
-
-async function getResearchPapers(): Promise<ResearchPaper[]> {
-  try {
-    const client = await pool.connect();
-    const result = await client.query(
-      "SELECT * FROM research_paper WHERE fields LIKE '%climate-change%' ORDER BY id",
-    );
-    client.release();
-    return result.rows;
-  } catch (error) {
-    console.error("Database connection error:", error);
-    return [];
-  }
-}
-
 export default async function ClimateChangePage() {
-  const researchPapers = await getResearchPapers();
+  const researchPapers = await getResearchPapers("climate-change");
 
   return (
     <main className="min-h-screen bg-background">
