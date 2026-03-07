@@ -1,10 +1,10 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import Link from "next/link"
-import Image from "next/image"
+import Footer from "@/components/footer";
+import Image from "next/image";
+import Link from "next/link";
 
 // Blur placeholder for lazy loading
-const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+const blurDataURL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
 
 const researchTopics = [
   {
@@ -37,16 +37,13 @@ const researchTopics = [
     image: "/images/agriculture.jpg",
     href: "/services/agriculture",
   },
-]
+];
 
 export default function ResearchTopicPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
-      
       <section className="pt-32 pb-20 px-6">
         <div className="mx-auto max-w-7xl">
-          {/* Page Header */}
           <div className="mb-16 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 tracking-tight">
               RESEARCH TOPICS
@@ -59,7 +56,7 @@ export default function ResearchTopicPage() {
               <Link
                 key={index}
                 href={topic.href}
-                className="group relative overflow-hidden rounded-lg aspect-[16/10] bg-gray-900"
+                className="group relative overflow-hidden rounded-lg aspect-16/10 bg-gray-900"
               >
                 {/* Background Image */}
                 <Image
@@ -71,10 +68,10 @@ export default function ResearchTopicPage() {
                   blurDataURL={blurDataURL}
                   loading="lazy"
                 />
-                
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
-                
+
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                   <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
@@ -89,8 +86,8 @@ export default function ResearchTopicPage() {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </main>
-  )
+  );
 }

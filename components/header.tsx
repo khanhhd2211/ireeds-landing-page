@@ -1,83 +1,84 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 // Blur placeholder for lazy loading
-const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+const blurDataURL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // start with header styled as if scrolled so it appears in final position on load
-  const [scrolled, setScrolled] = useState(true)
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
-  const [worksDropdownOpen, setWorksDropdownOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(true);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [worksDropdownOpen, setWorksDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY >= 0)
-    }
+      setScrolled(window.scrollY >= 0);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "HOME", href: "/" },
-    { 
-      name: "ABOUT", 
+    {
+      name: "ABOUT",
       href: "#about",
       dropdown: [
         { name: "Vision", href: "/about/vision" },
         { name: "Legal Structure", href: "/about/legal-structure" },
         { name: "Partnership", href: "/about/partnership" },
-      ]
+      ],
     },
     { name: "TEAM", href: "/team" },
     { name: "COURSE", href: "/course" },
-    { 
-      name: "WORKS", 
+    {
+      name: "WORKS",
       href: "#works",
       dropdown: [
         { name: "Research Topic", href: "/works/research-topic" },
         { name: "Project", href: "/works/project" },
-      ]
+      ],
     },
-  ]
+  ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     // Only handle anchor links (starting with #) for smooth scrolling
-    if (!href.startsWith('#')) {
-      return // Let Next.js router handle regular routes
+    if (!href.startsWith("#")) {
+      return; // Let Next.js router handle regular routes
     }
-    
-    e.preventDefault()
-    const element = document.querySelector(href)
+
+    e.preventDefault();
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setMobileMenuOpen(false)
-  }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div
         className={`mx-auto max-w-7xl transition-all duration-300 ${
           scrolled
-            ? "mt-4 mx-4 px-6 py-2 shadow-2xl border border-accent/30 bg-background/40 backdrop-blur-lg rounded-lg"
+            ? "mt-4 mx-4 px-6 py-2 shadow-lg border border-accent/30 bg-background/40 backdrop-blur-lg rounded-lg"
             : "px-6 py-4 bg-background/30 backdrop-blur-lg mx-4 shadow-lg border border-accent/20"
         }`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className="transition-all duration-300"
-          >
+          <Link href="/" className="transition-all duration-300">
             <Image
               src="/images/ireeds-logo.png"
               alt="IREEDS Logo"
@@ -92,28 +93,28 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {navItems.map((item) =>
               item.dropdown ? (
-                <div 
+                <div
                   key={item.name}
                   className="relative"
                   onMouseEnter={() => {
-                    if (item.name === 'ABOUT') setAboutDropdownOpen(true)
-                    if (item.name === 'WORKS') setWorksDropdownOpen(true)
+                    if (item.name === "ABOUT") setAboutDropdownOpen(true);
+                    if (item.name === "WORKS") setWorksDropdownOpen(true);
                   }}
                   onMouseLeave={() => {
-                    if (item.name === 'ABOUT') setAboutDropdownOpen(false)
-                    if (item.name === 'WORKS') setWorksDropdownOpen(false)
+                    if (item.name === "ABOUT") setAboutDropdownOpen(false);
+                    if (item.name === "WORKS") setWorksDropdownOpen(false);
                   }}
                 >
-                  <button
-                    className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-accent transition-colors cursor-pointer py-2"
-                  >
+                  <button className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-accent transition-colors cursor-pointer py-2">
                     {item.name}
                     <ChevronDown className="h-3 w-3" />
                   </button>
-                  
-                  {(item.name === 'ABOUT' ? aboutDropdownOpen : worksDropdownOpen) && (
+
+                  {(item.name === "ABOUT"
+                    ? aboutDropdownOpen
+                    : worksDropdownOpen) && (
                     <div className="absolute top-full left-0 pt-2 z-50">
                       <div className="w-48 bg-background border border-border rounded-lg shadow-lg py-2">
                         {item.dropdown.map((subItem) => (
@@ -129,7 +130,7 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-              ) : item.href.startsWith('#') ? (
+              ) : item.href.startsWith("#") ? (
                 <a
                   key={item.name}
                   href={item.href}
@@ -146,23 +147,30 @@ export default function Header() {
                 >
                   {item.name}
                 </Link>
-              )
-            ))}
+              ),
+            )}
           </nav>
 
           {/* CTA Button */}
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="hidden md:flex items-center gap-2 rounded-full border border-foreground px-5 py-2.5 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors cursor-pointer"
+            className="hidden md:flex items-center gap-2 rounded-full text-accent border border-accent/30 px-5 py-2.5 text-sm font-medium hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors cursor-pointer"
           >
             Let&apos;s talk
             <ArrowUpRight className="h-4 w-4" />
           </a>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -170,7 +178,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden pt-4 pb-6">
             <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
+              {navItems.map((item) =>
                 item.dropdown ? (
                   <div key={item.name}>
                     <button
@@ -178,7 +186,9 @@ export default function Header() {
                       className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-accent transition-colors w-full text-left"
                     >
                       {item.name}
-                      <ChevronDown className={`h-3 w-3 transition-transform ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`h-3 w-3 transition-transform ${aboutDropdownOpen ? "rotate-180" : ""}`}
+                      />
                     </button>
                     {aboutDropdownOpen && (
                       <div className="ml-4 mt-2 flex flex-col gap-2">
@@ -195,7 +205,7 @@ export default function Header() {
                       </div>
                     )}
                   </div>
-                ) : item.href.startsWith('#') ? (
+                ) : item.href.startsWith("#") ? (
                   <a
                     key={item.name}
                     href={item.href}
@@ -213,8 +223,8 @@ export default function Header() {
                   >
                     {item.name}
                   </Link>
-                )
-              ))}
+                ),
+              )}
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "#contact")}
@@ -228,5 +238,5 @@ export default function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }

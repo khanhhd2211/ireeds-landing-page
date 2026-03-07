@@ -1,18 +1,16 @@
-import Header from "@/components/header"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import LogoCloud from "@/components/logo-cloud"
-import SelectedWorks from "@/components/selected-works"
-import Services from "@/components/services"
-import ContactSection from "@/components/contact-section"
-import LatestArticles from "@/components/latest-articles"
-import Footer from "@/components/footer"
-import TableOfContents from "@/components/table-of-contents"
+import About from "@/components/about";
+import ContactSection from "@/components/contact-section";
+import Footer from "@/components/footer";
+import Hero from "@/components/hero";
+import LatestArticles from "@/components/latest-articles";
+import LogoCloud from "@/components/logo-cloud";
+import SelectedWorks from "@/components/selected-works";
+import Services from "@/components/services";
+import TableOfContents from "@/components/table-of-contents";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       <TableOfContents />
       <div id="hero">
         <Hero />
@@ -37,5 +35,5 @@ export default function Home() {
       </div>
       <Footer />
     </main>
-  )
+  );
 }

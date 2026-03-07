@@ -1,44 +1,50 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import Image from "next/image"
-import { Pool } from 'pg'
+import Footer from "@/components/footer";
+import Image from "next/image";
+import { Pool } from "pg";
 
 // Blur placeholder for lazy loading
-const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+const blurDataURL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
 
 // Database connection pool
 const pool = new Pool({
-  host: 'localhost',
+  host: "localhost",
   port: 5433,
-  database: 'demo',
-  user: 'demo_user',
-  password: 'secret',
-})
+  database: "demo",
+  user: "demo_user",
+  password: "secret",
+});
 
 async function getTeamMembers() {
   try {
-    const client = await pool.connect()
-    const result = await client.query('SELECT * FROM team_members ORDER BY id')
-    client.release()
-    return result.rows
+    const client = await pool.connect();
+    const result = await client.query("SELECT * FROM team_members ORDER BY id");
+    client.release();
+    return result.rows;
   } catch (error) {
-    console.error('Database connection error:', error)
-    return []
+    console.error("Database connection error:", error);
+    return [];
   }
 }
 
 export default async function TeamPage() {
-  const teamMembers = await getTeamMembers()
-  
+  const teamMembers = await getTeamMembers();
+
   // Helper function to check if member belongs to a department
   const belongsToDepartment = (member: any, dept: string) => {
-    return member.department && member.department.includes(dept)
-  }
-  
+    return member.department && member.department.includes(dept);
+  };
+
   // Filter members by department
-  const boardMembers = teamMembers.filter(m => belongsToDepartment(m, 'Board of Directors'))
-  const scientificMembers = teamMembers.filter(m => belongsToDepartment(m, 'Scientific Network'))
-  const adminMembers = teamMembers.filter(m => belongsToDepartment(m, 'Administration Office'))
+  const boardMembers = teamMembers.filter((m: any) =>
+    belongsToDepartment(m, "Board of Directors"),
+  );
+  const scientificMembers = teamMembers.filter((m: any) =>
+    belongsToDepartment(m, "Scientific Network"),
+  );
+  const adminMembers = teamMembers.filter((m: any) =>
+    belongsToDepartment(m, "Administration Office"),
+  );
 
   // Team member card component
   const TeamMemberCard = ({ member }: { member: any }) => (
@@ -62,59 +68,68 @@ export default async function TeamPage() {
         )}
       </div>
       <h3 className="text-xl font-semibold text-orange-500 mb-2">
-        {[member.name, member.title, member.degree].filter(Boolean).join(', ')}
+        {[member.name, member.title, member.degree].filter(Boolean).join(", ")}
       </h3>
       <p className="text-foreground/80 text-sm leading-relaxed">
         {member.description}
       </p>
     </div>
-  )
+  );
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
-      
       <section className="pt-32 pb-20 px-6">
         <div className="mx-auto max-w-7xl">
-          
           <div className="prose prose-lg max-w-none">
-            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-8 text-center">About IREEDS</h1>
-            
+            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-8 text-center">
+              About IREEDS
+            </h1>
+
             <p className="text-foreground/80 text-xl leading-relaxed text-center">
-              IREEDS is a unique collaboration of a network of economists, social scientists, climate experts, ecologists and data scientists from leading research institutions and universities around the world.
+              IREEDS is a unique collaboration of a network of economists,
+              social scientists, climate experts, ecologists and data scientists
+              from leading research institutions and universities around the
+              world.
             </p>
           </div>
-          <br/>
-          <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-8 text-center">Our Team</h1>
-          
+          <br />
+          <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-8 text-center">
+            Our Team
+          </h1>
+
           {/* Board of Directors */}
-          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Board of Directors</h2>
+          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">
+            Board of Directors
+          </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {boardMembers.map((member) => (
+            {boardMembers.map((member: any) => (
               <TeamMemberCard key={`board-${member.id}`} member={member} />
             ))}
           </div>
 
           {/* Scientific Network */}
-          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Scientific Network</h2>
+          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">
+            Scientific Network
+          </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {scientificMembers.map((member) => (
+            {scientificMembers.map((member: any) => (
               <TeamMemberCard key={`scientific-${member.id}`} member={member} />
             ))}
           </div>
 
           {/* Administration Office */}
-          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">Administration Office</h2>
+          <h2 className="text-3xl font-serif text-foreground mb-12 text-center">
+            Administration Office
+          </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {adminMembers.map((member) => (
+            {adminMembers.map((member: any) => (
               <TeamMemberCard key={`admin-${member.id}`} member={member} />
             ))}
           </div>
-
         </div>
       </section>
-      
+
       <Footer />
     </main>
-  )
+  );
 }

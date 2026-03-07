@@ -1,61 +1,68 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import Image from "next/image"
+import Footer from "@/components/footer";
+import Image from "next/image";
 
 // Blur placeholder for lazy loading
-const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+const blurDataURL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
 
 const projects = [
   {
     title: "AI Marketplace",
-    description: "Aus4Innovation Program – AI Marketplace Project: A Business Model and Analysis",
+    description:
+      "Aus4Innovation Program – AI Marketplace Project: A Business Model and Analysis",
     duration: "2022 – 2023",
     image: "/images/pexels-sanketgraphy-16461434.jpg",
     href: "/works/visionai",
-    details: "Australia's Data61 | CSIRO works with Griffith University (Australia), Hanoi University of Science and Technology and the Institute of Economics, Environment and Data Science in Vietnam (IREEDS) to implement the Vietnam AI Market project. This is a project to support the Ministry of Science and Technology of Vietnam (MoST) to develop a platform in the future that aims to strengthen the connection between domestic and foreign researchers as well as the connection between research area and industry in the field of AI.",
+    details:
+      "Australia's Data61 | CSIRO works with Griffith University (Australia), Hanoi University of Science and Technology and the Institute of Economics, Environment and Data Science in Vietnam (IREEDS) to implement the Vietnam AI Market project. This is a project to support the Ministry of Science and Technology of Vietnam (MoST) to develop a platform in the future that aims to strengthen the connection between domestic and foreign researchers as well as the connection between research area and industry in the field of AI.",
   },
   {
     title: "GEMMES Vietnam AFD",
-    description: "Gemmes Vietnam: Analysis of Socio-economic impact of climate change in Vietnam and adaption strategies",
+    description:
+      "Gemmes Vietnam: Analysis of Socio-economic impact of climate change in Vietnam and adaption strategies",
     duration: "2019 – 2023",
     image: "/images/flood.jpg",
     href: "/works/chatgenius",
-    details: "AFD and IRD have embarked on an ambitious scientific collaboration with the Ministry of Environment of Vietnam (MonRE) and more particularly its Department of Climate Change (DCC) on the measurement of socio-economic impacts of climate change and adaptation strategies. The overall objective is to support Vietnam in the implementation of the Paris Climate Agreement on impacts and adaptation. Funded by the 2050 Facility, this project materialises our common will to develop a long-term vision of the economic, social and territorial challenges of a resilient development for Vietnam.",
+    details:
+      "AFD and IRD have embarked on an ambitious scientific collaboration with the Ministry of Environment of Vietnam (MonRE) and more particularly its Department of Climate Change (DCC) on the measurement of socio-economic impacts of climate change and adaptation strategies. The overall objective is to support Vietnam in the implementation of the Paris Climate Agreement on impacts and adaptation. Funded by the 2050 Facility, this project materialises our common will to develop a long-term vision of the economic, social and territorial challenges of a resilient development for Vietnam.",
   },
   {
     title: "VietSCO CNES",
-    description: "The socio-economics impact of climate change and disasters on agriculture outcomes in Vietnam",
+    description:
+      "The socio-economics impact of climate change and disasters on agriculture outcomes in Vietnam",
     duration: "2020 – 2022",
     image: "/images/agri.jpg",
     href: "/works/motionai",
-    details: "The objective of the project is to provide users in Vietnam with a demonstrator of operational tools for the dynamic monitoring of rice crops using Sentinel-1 radar remote sensing data, to map information that complements in-situ data and statistics (rice crop surface area, crop calendar, productivity indicators, number of harvests per year).",
+    details:
+      "The objective of the project is to provide users in Vietnam with a demonstrator of operational tools for the dynamic monitoring of rice crops using Sentinel-1 radar remote sensing data, to map information that complements in-situ data and statistics (rice crop surface area, crop calendar, productivity indicators, number of harvests per year).",
   },
   {
     title: "VietErosion-Eco",
-    description: "Impacts of Coastal Erosion in Vietnam: Theoretical Models and Empirical Approaches (VIET-EROSION)",
+    description:
+      "Impacts of Coastal Erosion in Vietnam: Theoretical Models and Empirical Approaches (VIET-EROSION)",
     duration: "2017 – 2019",
     image: "/images/coastal.jpg",
     href: "/works/motionai",
-    details: "The main objective of this project is to develop solid and robust economic tools for assessing the economic losses due to coastal erosion in Vietnam and to measure the economic values that would be generated by various mitigation or adaptation measures. We will rely both on theoretical models of optimal management of beaches under erosion and empirical models allowing us to measure benefits derived from beaches.",
+    details:
+      "The main objective of this project is to develop solid and robust economic tools for assessing the economic losses due to coastal erosion in Vietnam and to measure the economic values that would be generated by various mitigation or adaptation measures. We will rely both on theoretical models of optimal management of beaches under erosion and empirical models allowing us to measure benefits derived from beaches.",
   },
   {
     title: "VietFlood",
-    description: "VietFlood: Assessment of climate change impacts on Nghe An province: mitigation and adaptation, 2011- 2013",
+    description:
+      "VietFlood: Assessment of climate change impacts on Nghe An province: mitigation and adaptation, 2011- 2013",
     duration: "2014 – 2015",
     image: "/images/vietflood.jpg",
     href: "/works/motionai",
-    details: "Climate change is expected to bring increased disasters to Vietnam in the form of typhoons, cyclones, floods and droughts. Approximately 10 percent of Vietnam's population and GDP is expected to be impacted if sea-level were to rise by one metre. Despite the huge impact of floods on the Vietnamese population, almost nothing is known about Vietnamese household's Willingness To Pay (WTP) for flood risk reduction also this is a key information for an efficient design of any public flood management policy. IREEDs research aims at filling this gap.",
+    details:
+      "Climate change is expected to bring increased disasters to Vietnam in the form of typhoons, cyclones, floods and droughts. Approximately 10 percent of Vietnam's population and GDP is expected to be impacted if sea-level were to rise by one metre. Despite the huge impact of floods on the Vietnamese population, almost nothing is known about Vietnamese household's Willingness To Pay (WTP) for flood risk reduction also this is a key information for an efficient design of any public flood management policy. IREEDs research aims at filling this gap.",
   },
-]
+];
 
 export default function ProjectPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
-      
       <section className="pt-32 pb-20 px-6">
         <div className="mx-auto max-w-7xl">
-          {/* Page Header */}
           <div className="mb-16 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 tracking-tight">
               PROJECTS
@@ -66,7 +73,7 @@ export default function ProjectPage() {
           <div className="grid md:grid-cols-2 gap-8 md:auto-rows-fr">
             {projects.map((project, index) => (
               <div key={index} className="flex flex-col">
-                <div className="group relative overflow-hidden rounded-lg aspect-[16/10] bg-gray-900">
+                <div className="group relative overflow-hidden rounded-lg aspect-16/10 bg-gray-900">
                   {/* Background Image */}
                   <Image
                     src={project.image}
@@ -77,10 +84,10 @@ export default function ProjectPage() {
                     blurDataURL={blurDataURL}
                     loading="lazy"
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
-                  
+
                   {/* Content */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-semibold text-white mb-2">
@@ -94,7 +101,7 @@ export default function ProjectPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Project Details */}
                 {project.details && (
                   <div className="mt-6 p-6 bg-card border border-border rounded-lg flex-1 flex items-start">
@@ -108,8 +115,8 @@ export default function ProjectPage() {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </main>
-  )
+  );
 }
