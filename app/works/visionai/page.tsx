@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "AI Marketplace – VisionAI Project",
+  description:
+    "The IREEDS VisionAI / AI Marketplace project (AUS4Innovation, 2022–2023) develops an AI platform connecting Vietnamese researchers and industry, supporting MoST in building a national AI ecosystem.",
+  openGraph: {
+    title: "AI Marketplace (VisionAI) | IREEDS",
+    description:
+      "IREEDS partners with CSIRO, Griffith University and HUST to build Vietnam’s AI Marketplace platform, enhancing research-industry collaboration in AI.",
+    url: "https://ireeds.org/works/visionai",
+  },
+};
 
 export default function AIMarketplacePage() {
   return (

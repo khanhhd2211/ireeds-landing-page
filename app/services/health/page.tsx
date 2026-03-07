@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Health Research",
+  description:
+    "IREEDS health research analyses community well-being, environmental determinants of health, and health economics in Vietnam, supporting evidence-based public health policy.",
+  openGraph: {
+    title: "Health Research | IREEDS",
+    description:
+      "IREEDS examines environmental and socio-economic health determinants in Vietnam, advancing community well-being and evidence-based health policy.",
+    url: "https://ireeds.org/services/health",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { getResearchPapers, type ResearchPaper } from "@/lib/queries";

@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Coastal Research",
+  description:
+    "IREEDS studies coastal erosion and its economic impacts in Vietnam, developing theoretical and empirical models to measure economic losses and assess the value of mitigation and adaptation measures.",
+  openGraph: {
+    title: "Coastal Research | IREEDS",
+    description:
+      "IREEDS coastal research provides rigorous economic analysis of erosion impacts and nature-based solutions to protect Vietnam’s coastlines.",
+    url: "https://ireeds.org/services/coastal",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { getResearchPapers, type ResearchPaper } from "@/lib/queries";

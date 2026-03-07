@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Courses",
+  description:
+    "IREEDS offers high-quality Pre-Master, Pre-PhD and short courses in Economics, Finance, Management and Data Science, equipping students with quantitative research tools for graduate programs and professional careers.",
+  openGraph: {
+    title: "Courses | IREEDS",
+    description:
+      "Explore IREEDS’ Pre-Master/PhD and short courses in Economics, Finance, Management and Data Science to build world-class academic competencies.",
+    url: "https://ireeds.org/course",
+  },
+};
 import { BookOpen } from "lucide-react";
 import Image from "next/image";
 

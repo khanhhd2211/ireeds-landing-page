@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Climate Change Research",
+  description:
+    "IREEDS investigates socio-economic impacts of climate change in Vietnam and develops adaptation strategies, supporting Vietnam’s commitments under the Paris Climate Agreement through projects like GEMMES Vietnam (AFD/IRD).",
+  openGraph: {
+    title: "Climate Change Research | IREEDS",
+    description:
+      "IREEDS climate change research analyses macro-economic impacts, flood risks, and adaptation finance pathways for Vietnam in collaboration with AFD and IRD.",
+    url: "https://ireeds.org/services/climate-change",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { getResearchPapers, type ResearchPaper } from "@/lib/queries";

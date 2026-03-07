@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Sustainable Economy Research",
+  description:
+    "IREEDS sustainable economy research applies environmental and natural resource economics, bio-economics, ecosystem services valuation, and biodiversity analysis to support Vietnam’s transition to a green economy.",
+  openGraph: {
+    title: "Sustainable Economy Research | IREEDS",
+    description:
+      "IREEDS applies environmental economics and ecosystem services analysis to support Vietnam’s shift toward a resilient, inclusive and sustainable economy.",
+    url: "https://ireeds.org/services/sustainable-economy",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { getResearchPapers, type ResearchPaper } from "@/lib/queries";

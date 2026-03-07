@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "IREEDS has led landmark projects including AI Marketplace (CSIRO AUS4Innovation), GEMMES Vietnam (AFD/IRD), VietSCO (CNES), VietErosion-Eco and VietFlood – advancing climate adaptation and scientific innovation in Vietnam.",
+  openGraph: {
+    title: "Projects | IREEDS",
+    description:
+      "Discover IREEDS’ funded research projects in AI, climate change, coastal erosion, and agriculture with partners AFD, CSIRO, CNES, and Griffith University.",
+    url: "https://ireeds.org/works/project",
+  },
+};
 import Image from "next/image";
 
 // Blur placeholder for lazy loading

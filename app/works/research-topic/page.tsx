@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Research Topics",
+  description:
+    "Explore IREEDS research areas spanning Sustainable Economy, Energy, Climate Change, Coastal, Health and Agriculture – applying advanced tools like R, Stata, GIS and machine learning to Vietnam’s sustainable development challenges.",
+  openGraph: {
+    title: "Research Topics | IREEDS",
+    description:
+      "IREEDS research covers Sustainable Economy, Energy, Climate Change, Coastal, Health and Agriculture, combining rigorous methodology with deep knowledge of Vietnam.",
+    url: "https://ireeds.org/works/research-topic",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 

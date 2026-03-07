@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Partnership",
+  description:
+    "IREEDS builds partnerships with researchers, practitioners, businesses and institutions worldwide, including AFD, IRD, CSIRO, Griffith University and more, to advance sustainable development in Vietnam.",
+  openGraph: {
+    title: "Partnership | IREEDS",
+    description:
+      "IREEDS partners with leading global institutions such as AFD, CSIRO, CNES and Griffith University to deliver impactful research for Vietnam.",
+    url: "https://ireeds.org/about/partnership",
+  },
+};
 
 export default function PartnershipPage() {
   return (

@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Energy Research",
+  description:
+    "IREEDS energy research examines Vietnam’s energy transition, renewable energy economics, and policy frameworks supporting a low-carbon pathway aligned with sustainable development goals.",
+  openGraph: {
+    title: "Energy Research | IREEDS",
+    description:
+      "IREEDS provides evidence-based analysis on energy economics, renewable transition and low-carbon policy for Vietnam’s sustainable energy future.",
+    url: "https://ireeds.org/services/energy",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { getResearchPapers, type ResearchPaper } from "@/lib/queries";

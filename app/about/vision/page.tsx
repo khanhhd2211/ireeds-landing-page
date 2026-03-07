@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Vision",
+  description:
+    "IREEDS strives to become an ecosystem of multi-disciplinary experts working toward a single common goal – promoting the sustainable development of Vietnam through research, policy evidence, and knowledge dissemination.",
+  openGraph: {
+    title: "Vision | IREEDS",
+    description:
+      "IREEDS’s vision: a multi-disciplinary research ecosystem promoting sustainable development of Vietnam through scientific excellence and policy engagement.",
+    url: "https://ireeds.org/about/vision",
+  },
+};
 
 export default function VisionPage() {
   return (

@@ -17,10 +17,42 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Genai - Next-Generation AI Solutions",
+  title: {
+    default:
+      "IREEDS – Institute of Research in Economics, Environment and Data Science",
+    template: "%s | IREEDS",
+  },
   description:
-    "Leading the future with advanced AI, LLM, and generative technologies for images and videos.",
-  generator: "v0.app",
+    "IREEDS is a multi-disciplinary research institute founded by leading Vietnamese scientists, promoting sustainable development of Vietnam through research, training and practices in economics, environment and data science.",
+  keywords: [
+    "IREEDS",
+    "Institute of Research in Economics Environment and Data Science",
+    "Vietnam research institute",
+    "sustainable development Vietnam",
+    "economics environment data science",
+    "climate change research Vietnam",
+    "VCREME",
+  ],
+  authors: [{ name: "IREEDS", url: "https://ireeds.org" }],
+  creator: "IREEDS",
+  metadataBase: new URL("https://ireeds.org"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ireeds.org",
+    siteName: "IREEDS",
+    title:
+      "IREEDS – Institute of Research in Economics, Environment and Data Science",
+    description:
+      "Multi-disciplinary research institute promoting sustainable development of Vietnam through scientific research, training, and policy evidence.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "IREEDS – Institute of Research in Economics, Environment and Data Science",
+    description:
+      "Multi-disciplinary research institute promoting sustainable development of Vietnam through scientific research, training, and policy evidence.",
+  },
 };
 
 export default function RootLayout({

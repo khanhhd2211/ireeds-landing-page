@@ -1,6 +1,21 @@
 import About from "@/components/about";
 import ContactSection from "@/components/contact-section";
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title:
+    "IREEDS – Institute of Research in Economics, Environment and Data Science",
+  description:
+    "IREEDS is a multi-disciplinary research institute founded by leading Vietnamese scientists, promoting the sustainable development of Vietnam through research, training and practices in economics, environment and data science.",
+  openGraph: {
+    title:
+      "IREEDS – Institute of Research in Economics, Environment and Data Science",
+    description:
+      "Promoting the adoption of robust scientific evidence in policy-making and bridging technological accessibility for the Vietnamese society.",
+    url: "https://ireeds.org",
+  },
+};
 import Hero from "@/components/hero";
 import LatestArticles from "@/components/latest-articles";
 import LogoCloud from "@/components/logo-cloud";

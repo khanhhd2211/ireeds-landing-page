@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Agriculture Research",
+  description:
+    "IREEDS conducts research on agriculture in Vietnam, examining socio-economic impacts on crop outcomes, rice mapping using Sentinel-1 radar remote sensing, and sustainable agroecology practices.",
+  openGraph: {
+    title: "Agriculture Research | IREEDS",
+    description:
+      "IREEDS agriculture research covers climate impacts on crop yields, rice crop mapping with satellite data, and regenerative agroecology for Vietnam’s sustainable development.",
+    url: "https://ireeds.org/services/agriculture",
+  },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { getResearchPapers, type ResearchPaper } from "@/lib/queries";

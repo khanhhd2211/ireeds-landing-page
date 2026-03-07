@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the IREEDS team – a unique collaboration of scientists, economists, computational experts and analysts from leading research institutions and universities worldwide.",
+  openGraph: {
+    title: "Our Team | IREEDS",
+    description:
+      "IREEDS brings together scientists, economists, and data experts from top universities globally, united by a mission to promote Vietnam’s sustainable development.",
+    url: "https://ireeds.org/team",
+  },
+};
 import Image from "next/image";
 import { getTeamMembers, type TeamMember } from "@/lib/queries";
 

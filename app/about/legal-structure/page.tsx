@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Legal Structure",
+  description:
+    "Learn about the legal and organizational structure of IREEDS – a private and independent research institution with a flexible administrative framework supporting domestic and international collaboration.",
+  openGraph: {
+    title: "Legal Structure | IREEDS",
+    description:
+      "IREEDS operates as a private, independent research institution with a streamlined structure enabling transparent national and international collaboration.",
+    url: "https://ireeds.org/about/legal-structure",
+  },
+};
 import Image from "next/image";
 
 // Blur placeholder for lazy loading
