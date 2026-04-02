@@ -35,7 +35,9 @@ VALUES
     ('Nguyen Huu Dung', '', 'PhD', 'PhD in Ecological economics from Seoul National University; and lecturer at National Economics University (Viet Nam)', 'images/230220231007-ts-nguyen-huu-dung-3.jpg', 'Scientific Network'),
     ('Manh-Hung Nguyen', '', 'PhD', 'Researcher at INRAE, member of Toulouse School of Economics', 'images/d95e08f2762ec437c885b1626ec7db6e.jpg', 'Scientific Network'),
     ('Minh Nhat Pham', '', 'PhD', 'Postdoctoral researcher at the Norwegian Institute of Public Health – PhD in natural and ecological economics at UiT The Arctic University of Norway', 'images/426620739_1788784801625083_6623956539586637544_n-2.jpg', 'Scientific Network'),
-    ('Nguyen Ha My', '', 'BSc', 'Bachelor from Foreign Trade University, Vietnam', 'images/z4222455939788_a30c4eb7ebad8c3faab17bd4b26c94a2-1.jpg', 'Administration Office');
+    ('Nguyen Ha My', '', 'BSc', 'Bachelor from Foreign Trade University, Vietnam', 'images/z4222455939788_a30c4eb7ebad8c3faab17bd4b26c94a2-1.jpg', 'Administration Office'),
+    ('Nguyen Van Hanh', '', 'PhD', 'PhD in Computer Science from ParisTech (France), specializing in digital signal processing. Computer Science engineer from INP Grenoble & Bach Khoa Hanoi.', 'images/vanhanh.png', 'Board of Directors');
+    ('Le Thanh Ha', '', 'PhD', 'PhD in Economics at the National Graduate Institute for Policy Studies (GRIPS) in Tokyo', 'images/lethanhha.jpeg', 'Board of Directors');
 
 -- create research papers table
 CREATE TABLE research_paper (
