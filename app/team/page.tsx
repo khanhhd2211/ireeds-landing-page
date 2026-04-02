@@ -95,7 +95,7 @@ export default async function TeamPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {boardMembers.map((member: any) => (
-              <TeamMemberCard key={`board-${member.id}`} member={member} />
+              <TeamMemberCard key={`board-${member.name}`} member={member} />
             ))}
           </div>
 
@@ -105,7 +105,7 @@ export default async function TeamPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {scientificMembers.map((member: any) => (
-              <TeamMemberCard key={`scientific-${member.id}`} member={member} />
+              <TeamMemberCard key={`scientific-${member.name}`} member={member} />
             ))}
           </div>
 
@@ -115,7 +115,7 @@ export default async function TeamPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {adminMembers.map((member: any) => (
-              <TeamMemberCard key={`admin-${member.id}`} member={member} />
+              <TeamMemberCard key={`admin-${member.name}`} member={member} />
             ))}
           </div>
         </div>
