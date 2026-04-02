@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Chon LE-VAN",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD in Economics at University of Georgia, and Department Head at International University",
+    "image_url": "images/chonle-le-van-chon.jpg",
+    "department": "Board of Directors"
+  },
+  {
+    "name": "Tuan Anh LUONG",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD in Economics at Princeton University, and Lecturer in Economics at De Montfort University (UK)",
+    "image_url": "images/tuan-anh-luong.jpg",
+    "department": "Board of Directors"
+  },
+  {
+    "name": "Huu Minh MAI",
+    "title": "",
+    "degree": "PhD",
+    "description": "Founder and CEO of Intelligent Financial Research & Consulting (IFRC)",
+    "image_url": "images/huhu_mi.jpg",
+    "department": "Board of Directors"
+  },
+  {
+    "name": "Hien V.Nguyen",
+    "title": "",
+    "degree": "",
+    "description": "Scientist in Soils and Nutrient Management at the Soils and Fertilizers Research Institute, PhD in Environmental Economics at the University of Birmingham, UK",
+    "image_url": "images/hien_v_nguyen.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Son Nghiem",
+    "title": "Asso. Prof.",
+    "degree": "PhD",
+    "description": "PhD in Economics at University of Queensland, Associate Professor at Australian National University",
+    "image_url": "images/son_nghiem.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Viet Ngu Hoang",
+    "title": "Asso. Prof.",
+    "degree": "PhD",
+    "description": "Associate Professor at Queensland University of Technology, Member of Royal Economic Society",
+    "image_url": "images/viet_ngu_hoang.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Thong Nguyen – Huy",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD in Computational Statistics & Data Sciences from University of Southern Australia; received Award for Excellence in Doctoral Research",
+    "image_url": "images/thong_nguyen_huy.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Xuan Hong – DO",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD at University of Adelaide, Research Fellow at School for Environment and Sustainability at University of Michigan",
+    "image_url": "images/xuan_hong_do.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Tuan Nguyen",
+    "title": "",
+    "degree": "MSc",
+    "description": "PhD candidate at Hasselt University, Belgium and Master graduate in Economics & Ecology at Toulouse School of Economics, France",
+    "image_url": "images/tuan_nguyen.jpg",
+    "department": "Administration Office,Scientific Network"
+  },
+  {
+    "name": "Lan-Anh Thi NGUYEN",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD under program between NAFOSTED and INRAE Montpellier, Program manager at Banking Academy",
+    "image_url": "images/lan-anh.jpg",
+    "department": "Administration Office,Scientific Network"
+  },
+  {
+    "name": "Toan Nguyen",
+    "title": "",
+    "degree": "PhD",
+    "description": "Research Fellow at Development Policy Centre, Crawford School of Public Policy, ANU, and PhD at Curtin University",
+    "image_url": "images/toannguyen.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Vu Thi Thuong",
+    "title": "",
+    "degree": "PhD Candidate",
+    "description": "MSc in Development Economics from Vietnam – The Netherlands programe (VNP) at the University of Economics, Ho Chi Minh City, lecturer at University of Da Nang",
+    "image_url": "images/vu-thuong.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Tran Nguyen Ngoc",
+    "title": "",
+    "degree": "PhD",
+    "description": "Lecturer of SoICT, Hanoi University of Science and Technology; PhD in remote sensing from University of Technology Sydney in 2019",
+    "image_url": "images/tran-nguyen-ngoc.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Nguyen Huu Dung",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD in Ecological economics from Seoul National University; and lecturer at National Economics University (Viet Nam)",
+    "image_url": "images/230220231007-ts-nguyen-huu-dung-3.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Manh-Hung Nguyen",
+    "title": "",
+    "degree": "PhD",
+    "description": "Researcher at INRAE, member of Toulouse School of Economics",
+    "image_url": "images/d95e08f2762ec437c885b1626ec7db6e.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Minh Nhat Pham",
+    "title": "",
+    "degree": "PhD",
+    "description": "Postdoctoral researcher at the Norwegian Institute of Public Health – PhD in natural and ecological economics at UiT The Arctic University of Norway",
+    "image_url": "images/426620739_1788784801625083_6623956539586637544_n-2.jpg",
+    "department": "Scientific Network"
+  },
+  {
+    "name": "Nguyen Ha My",
+    "title": "",
+    "degree": "BSc",
+    "description": "Bachelor from Foreign Trade University, Vietnam",
+    "image_url": "images/z4222455939788_a30c4eb7ebad8c3faab17bd4b26c94a2-1.jpg",
+    "department": "Administration Office"
+  },
+  {
+    "name": "Nguyen Van Hanh",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD in Computer Science from ParisTech (France), specializing in digital signal processing. Computer Science engineer from INP Grenoble & Bach Khoa Hanoi.",
+    "image_url": "images/vanhanh.png",
+    "department": "Board of Directors"
+  },
+  {
+    "name": "Le Thanh Ha",
+    "title": "",
+    "degree": "PhD",
+    "description": "PhD in Economics at the National Graduate Institute for Policy Studies (GRIPS) in Tokyo",
+    "image_url": "images/lethanhha.jpeg",
+    "department": "Board of Directors"
+  }
+]
